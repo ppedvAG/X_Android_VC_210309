@@ -52,7 +52,7 @@ namespace X_Android
             //Standartprogramm geöffnet wird) am Beispiel eines Webpage-Aufrufs im Standartbrowser.
 
             //Erstellung des Intents
-            Intent implizieterIntent = new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://www.google.de"));
+            Intent implizieterIntent = new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://placeimg.com/640/800/any"));
             //Zuweisung des Click-Events mit der StartActivity()-Methode, welcher der Intent übergeben wird
             Btn_Google.Click += (s, e) => StartActivity(implizieterIntent);
 
@@ -63,6 +63,10 @@ namespace X_Android
             Intent expliziterIntent = new Intent(this, typeof(ShowPictureActivity));
             //Zuweisung des Click-Events
             Btn_Picture.Click += (s, e) => StartActivity(expliziterIntent);
+
+            //Todo-Übung
+            Button btnTodo = FindViewById<Button>(Resource.Id.activity_main_Btn_Todo);
+            btnTodo.Click += (s, e) => StartActivity(new Intent(this, typeof(ToDoActivity)));
         }
 
         //Bsp-Methode als vollausgeschriebene Methode (Lambda-Version siehe oben)
